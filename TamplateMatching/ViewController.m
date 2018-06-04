@@ -102,7 +102,7 @@
 }
 
 // 绘制标识框
-- (void)drawRectangleAtPoint:(CGRect)rect {
+- (void)drawRectangle:(CGRect)rect {
     if (rectangleLayer == nil) {
         rectangleLayer = [CALayer layer];
         rectangleLayer.frame = CGRectMake(0, 0, templateMatch.templateImage.size.width, templateMatch.templateImage.size.height);
@@ -126,7 +126,7 @@
     CGRect rect = [templateMatch matchWithSampleBuffer:sampleBuffer]; //将buffer提交给OpenCV进行模板匹配
     dispatch_async(dispatch_get_main_queue(), ^{
         if (!CGRectEqualToRect(rect,CGRectZero)) { //匹配成功，则绘制标识框
-            [self drawRectangleAtPoint:[self.videoPreviewLayer rectForMetadataOutputRectOfInterest:rect]]; //由于视频的尺寸和屏幕宽高比不一定一致，所以对于视频中的一个点坐标，需要转换到屏幕的对应位置中。
+            [self drawRectangle:[self.videoPreviewLayer rectForMetadataOutputRectOfInterest:rect]]; //由于视频的尺寸和屏幕宽高比不一定一致，所以对于视频中的一个点坐标，需要转换到屏幕的对应位置中。
         }
         else{ //未匹配到，则隐藏标识框
             [self hideRectangle];

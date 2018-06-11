@@ -1,5 +1,5 @@
 # TemplateMatching
-An iOS demonstration of OpenCV Template Matching. Gif:
+An iOS demonstration of OpenCV Template Matching. We use it to detect and locate object in a video. The effect is shown in the following Gif:
 
 <p align="center" >
   <img src="https://github.com/chenyun122/TemplateMatching/blob/master/Screenshots/tp3.gif?raw=true" alt="template matching" title="template matching" width="325px"/>
